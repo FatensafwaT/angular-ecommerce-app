@@ -1,0 +1,41 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Your Cart</h2>
+
+  <div *ngIf="cartItems.length === 0" class="text-center">
+    Your cart is empty 🛒
+  </div>
+
+  <div *ngIf="cartItems.length > 0">
+    <table class="table table-hover align-middle">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of cartItems">
+          <td>{{ item.title }}</td>
+          <td>{{ item.price | currency:'EGP':'symbol' }}</td>
+          <td>
+            <button class="btn btn-sm btn-outline-primary me-1" (click)="decrement(item.id)">-</button>
+            {{ item.quantity }}
+            <button class="btn btn-sm btn-outline-primary ms-1" (click)="increment(item.id)">+</button>
+          </td>
+          <td>
+            <button class="btn btn-sm btn-danger" (click)="removeItem(item.id)">Remove</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 class="text-end">Total: {{ total | currency:'EGP':'symbol' }}</h4>
+    <button class="btn btn-clear float-end mt-2" (click)="cartService.clearCart(); loadCart();">Clear Cart</button>
+    <button class="btn btn-checkout" routerLink="/checkout">
+  Check Out
+</button>
+
+  </div>
+</div>

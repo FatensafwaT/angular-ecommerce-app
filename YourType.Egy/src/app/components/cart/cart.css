@@ -1,0 +1,17 @@
+table th, table td {
+  vertical-align: middle !important;
+}
+
+h4 {
+  color: #a3573a;
+}
+.btn-clear{
+  background-color: #a3573a;
+  color: white;
+
+}
+.btn-checkout{
+    background-color: #a3573a;
+    color: white;
+
+}

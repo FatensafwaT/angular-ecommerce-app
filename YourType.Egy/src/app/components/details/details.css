@@ -1,0 +1,26 @@
+img {
+    border-radius: 10px;
+    max-height: 400px;
+}
+
+.price {
+    font-size: 1.5rem;
+    color: #a3573a;
+}
+
+.title {
+    color: #a3573a;
+}
+
+.btn-add {
+    background-color: #a3573a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.btn-add:hover {
+    background-color: #a3573a;
+}

@@ -1,0 +1,109 @@
+/* ===== Card ===== */
+.card {
+  border-radius: 18px;
+  max-width: 260px;
+  margin: auto;
+  border: none;
+  background: #fff;
+  overflow: hidden;
+  transition: all 0.35s ease;
+  animation: fadeUp 0.6s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(163, 87, 58, 0.25);
+}
+
+/* ===== Image ===== */
+.card img {
+  height: 180px;
+  object-fit: contain;
+  padding: 14px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover img {
+  transform: scale(1.1);
+}
+
+/* ===== Body ===== */
+.card-body {
+  padding: 14px;
+}
+
+/* ===== Title ===== */
+.card-title {
+  font-size: 0.95rem;
+  color: #6b3e2e;
+  height: 42px;
+  overflow: hidden;
+  margin-bottom: 6px;
+}
+
+/* ===== Price ===== */
+.price {
+  color: #a3573a;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+/* ===== Buttons ===== */
+.btn-add,
+.btn-info {
+  border-radius: 22px;
+  font-size: 0.85rem;
+  padding: 6px 16px;
+  transition: all 0.3s ease;
+}
+
+/* Add to Cart */
+.btn-add {
+  border: 1px solid #a3573a;
+  color: #a3573a;
+  background: transparent;
+}
+
+.btn-add:hover {
+  background-color: #a3573a;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(163, 87, 58, 0.35);
+}
+
+.btn-add:active {
+  transform: scale(0.95);
+}
+
+/* View Details */
+.btn-info {
+  margin-left: 12px;
+  background-color: #fff;
+  border: 1px solid #a3573a;
+  color: #a3573a;
+}
+
+.btn-info:hover {
+  background-color: #a3573a;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(163, 87, 58, 0.35);
+}
+
+/* ===== Title ===== */
+.general-title {
+  color: #a3573a;
+  font-weight: 700;
+  letter-spacing: 1px;
+}

@@ -1,0 +1,118 @@
+.checkout-container {
+  max-width: 900px;
+  margin: 4rem auto;
+  padding: 2.5rem;
+  background: #f6e6dc;
+  border-radius: 16px;
+  position: relative;
+  z-index: 1;
+}
+
+
+.checkout-container h2,
+.checkout-container h5 {
+  color: #a3573a;
+  margin-bottom: 1.5rem;
+}
+
+
+.checkout-container input {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #d9b7a5;
+  background: #fff;
+}
+
+.summary-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.8rem;
+  border: 1px solid #e3c6b6;
+  box-shadow: 0 6px 18px rgba(163, 87, 58, 0.12);
+}
+
+/* كل منتج */
+.summary-item {
+  padding: 0.6rem 0;
+  border-bottom: 1px dashed #e3c6b6;
+}
+
+.summary-item:last-child {
+  border-bottom: none;
+}
+
+.summary-item strong {
+  color: #7a4a36;
+  font-size: 0.95rem;
+}
+
+.summary-item small {
+  color: #a3573a;
+  font-size: 0.85rem;
+}
+
+/* خط فاصل */
+.summary-divider {
+  margin: 1rem 0;
+  border-top: 1px solid #e3c6b6;
+}
+
+/* السعر النهائي */
+.summary-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.summary-total span {
+  color: #7a4a36;
+  font-weight: 600;
+}
+
+.summary-total h4 {
+  color: #a3573a;
+  font-weight: bold;
+  margin: 0;
+}
+
+
+
+.btn-checkout {
+  width: 100%;
+  padding: 0.8rem;
+  background: #a3573a;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.btn-checkout:hover {
+  background: #8c452d;
+}
+
+.btn-checkout:disabled {
+  background: #c8a08f;
+  cursor: not-allowed;
+}
+
+label {
+  color: #7a4a36;
+  font-weight: 500;
+  margin-bottom: 0.3rem;
+}
+h4{
+  color: #7a4a36;
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+}

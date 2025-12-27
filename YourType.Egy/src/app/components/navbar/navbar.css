@@ -1,0 +1,39 @@
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #a3573a;
+  transition: color 0.3s;
+}
+
+.navbar-brand:hover {
+  color: #b17a6b;
+}
+
+.nav-link {
+  color: #7a4a3b;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: #b17a6b;
+}
+
+/* spacing for desktop */
+@media (min-width: 992px) {
+  .navbar-nav .nav-item {
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+  }
+}
+
+
+@media (max-width: 991px) {
+  .navbar-nav {
+    flex-direction: column;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 0.5rem 0;
+  }
+}
