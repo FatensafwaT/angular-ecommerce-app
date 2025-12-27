@@ -2,6 +2,7 @@
   "name": "ecommerce-app",
   "version": "0.0.0",
   "scripts": {
+    
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
@@ -23,6 +24,7 @@
   "private": true,
   "packageManager": "npm@11.6.1",
   "dependencies": {
+    "homepage":"https://github.com/FatensafwaT.github.io/angular-ecommerce-app",
     "@angular/common": "^21.0.0",
     "@angular/compiler": "^21.0.0",
     "@angular/core": "^21.0.0",
@@ -37,6 +39,7 @@
     "@angular/build": "^21.0.3",
     "@angular/cli": "^21.0.3",
     "@angular/compiler-cli": "^21.0.0",
+    "gh-pages": "^6.3.0",
     "jsdom": "^27.1.0",
     "typescript": "~5.9.2",
     "vitest": "^4.0.8"

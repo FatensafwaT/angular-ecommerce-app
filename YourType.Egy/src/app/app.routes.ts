@@ -1,6 +1,6 @@
 import { Routes } from '@angular/router';
 import { AuthGuard } from './auth/auth-guard';
-import { Details } from './components/details/details';
+import { DetailsComponent } from './components/details/details';
 import { CheckOut } from './components/check-out/check-out';
 
 export const routes: Routes = [
@@ -27,7 +27,7 @@ export const routes: Routes = [
   loadComponent: () =>
     import('./auth/register/register').then(m => m.RegisterComponent)
 },
-{ path: 'details/:id', component: Details },
+{ path: 'details/:id', component: DetailsComponent },
 { path: 'checkout', component: CheckOut },
 
 { path: '**', redirectTo: 'login' }

@@ -4,42 +4,37 @@ import { Product, ProductsService } from '../../services/products_Service';
 import { CommonModule } from '@angular/common';
 import { CartService } from '../../services/cart-service';
 
-
 @Component({
   selector: 'app-details',
+  standalone: true,
   imports: [CommonModule],
   templateUrl: './details.html',
   styleUrl: './details.css',
 })
-export class Details {
- productId!: number;
-     product: Product | null = null;
-    loading = true;
+export class DetailsComponent implements OnInit {
+  productId!: number;
+  product: Product | null = null;
+  loading = true;
 
-  constructor(private route: ActivatedRoute,
-    private productsService:ProductsService,
-    private cartService:CartService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private productsService: ProductsService,
+    private cartService: CartService
+  ) { }
 
-   ngOnInit() {
-  
+  ngOnInit(): void {
+
     this.productId = Number(this.route.snapshot.paramMap.get('id'));
 
-    
-    this.productsService.getProductById(this.productId).subscribe({
-      next: (data) => {
-        this.product = data;
-        this.loading = false;
-      },
-      error: () => {
-        this.product = null;
-        this.loading = false;
-      },
+
+    this.productsService.getProductById(this.productId).subscribe(product => {
+      this.product = product ?? null;
+      this.loading = false;
     });
   }
-  addToCart(product: any) {
-  this.cartService.addToCart(product);
 
   
-  
-}
+  addToCart(product: Product): void {
+    this.cartService.addToCart(product);
+  }
 }
