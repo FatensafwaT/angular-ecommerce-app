@@ -15,13 +15,23 @@ export class AuthService {
   private users: User[] = []; // Fake database
   private loggedInUser: User | null = null;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+    this.loadUsers();
+  }
+  private loadUsers() {
+    const storedUsers = localStorage.getItem('users');
+    this.users = storedUsers ? JSON.parse(storedUsers) : [];
+  }
+    private saveUsers() {
+    localStorage.setItem('users', JSON.stringify(this.users));
+  }
 
   register(name: string, email: string, password: string): boolean {
     // Check if email exists
     if (this.users.find(u => u.email === email)) return false;
 
     this.users.push({ name, email, password });
+     this.saveUsers();
     return true;
   }
 

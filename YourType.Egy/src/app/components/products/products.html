@@ -1,1 +1,34 @@
-<p>products works!</p>
+<div class="container mt-5">
+  <h2 class="text-center mb-4 general-title">Our Products</h2>
+
+  <div *ngIf="loading" class="text-center">
+    Loading...
+  </div>
+
+  <div class="row" *ngIf="!loading">
+    <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let product of products">
+
+      <div class="card h-100 shadow-sm">
+        <img [src]="product.image" class="card-img-top" alt="{{ product.title }}">
+
+        <div class="card-body text-center">
+          <h6 class="card-title">{{ product.title }}</h6>
+          <p class="price">
+            {{ product.price | currency:'EGP':'symbol' }}
+          </p>
+
+          <button class="btn btn-add" (click)="addToCart(product)">
+            Add to Cart
+          </button>
+          <button class="btn btn-info " (click)="goToDetails(product.id)">
+            View Details
+          </button>
+
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

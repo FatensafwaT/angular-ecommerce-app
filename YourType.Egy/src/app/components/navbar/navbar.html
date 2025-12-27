@@ -1,38 +1,33 @@
 <nav class="navbar navbar-expand-lg" style="background-color: #d9b7a5;">
-  <div class="container d-flex justify-content-between align-items-center">
-    
-
-    <div class="d-flex"></div>
-
-   
-    <a class="navbar-brand text-center" routerLink="/">
+  <div class="container">
+    <a class="navbar-brand mx-auto text-center" style="font-size: 1.8rem; font-weight: bold; color: #a3573a;"
+      routerLink="/">
       YourType
     </a>
-
-   
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-   
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+    <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-  <li class="nav-item" *ngIf="!authService.isAuthenticated()">
-    <a class="nav-link" routerLink="/login">Login</a>
-  </li>
-  <li class="nav-item" *ngIf="authService.isAuthenticated()">
-    <a class="nav-link" (click)="logout()">Logout</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/products">Products</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="/cart">Cart</a>
-  </li>
-</ul>
-
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/products" routerLinkActive="active">Products</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/cart">
+            Cart <span class="badge bg-primary">{{ cartCount }}</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="!authService.isAuthenticated()" routerLink="/login" routerLinkActive="active">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" *ngIf="authService.isAuthenticated()"  routerLinkActive="active" (click)="logout()">LogOut</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+        </li>
+      </ul>
     </div>
-
   </div>
 </nav>
